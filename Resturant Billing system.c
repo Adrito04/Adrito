@@ -171,3 +171,21 @@ int main()
             fclose(fp);
             break;
 
+            case 3:
+
+            fp = fopen("RestaurantBill.dat","r");
+            printf("\n  *****Your Previous Invoices*****\n");
+            while(fread(&order,sizeof(struct orders),1,fp))
+            {
+                float tot = 0;
+                generateBillHeader(order.customer,order.date);
+                for(int i=0; i<order.numOfFoods; i++)
+                {
+                    generateBillBody(order.f[i].food,order.f[i].qty,order.f[i].price);
+                    tot+=order.f[i].qty * order.f[i].price;
+                }
+                generateBillFooter(tot);
+            }
+            fclose(fp);
+            break;
+
