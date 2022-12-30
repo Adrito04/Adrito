@@ -37,6 +37,15 @@ void generateBillHeader(char name[50],char date[30])
     printf("\n\n");
 }
 
+void generateBillBody(char food[30],int qty, float price)
+{
+    printf("%s\t\t",food);
+    printf("%d\t\t",qty);
+    printf("%.2f\t\t",qty * price);
+    printf("\n");
+}
+
+
 void generateBillFooter(float total)
 {
     printf("\n");
@@ -58,6 +67,16 @@ void generateBillFooter(float total)
 
 int main()
 {
+
+
+      system("COLOR 70");
+    int opt,n;
+    struct orders ord;
+    struct orders order;
+    char saveBill = 'y',contFlag = 'y';
+    char name[50];
+    FILE *fp;
+
 
     system("COLOR 70");
 
