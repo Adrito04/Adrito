@@ -140,7 +140,7 @@ int main()
             }
             break;
 
-            case 2:
+        case 2:
             printf("Enter the name of the customer:\t");
 
             fgets(name,50,stdin);
@@ -166,12 +166,12 @@ int main()
             }
             if(!invoiceFound)
             {
-                printf("Sorry the invoice for %s was not found!",name);
+                printf("\nSorry the invoice for %s was not found!",name);
             }
             fclose(fp);
             break;
 
-            case 3:
+        case 3:
 
             fp = fopen("RestaurantBill.dat","r");
             printf("\n  *****Your Previous Invoices*****\n");
@@ -189,3 +189,21 @@ int main()
             fclose(fp);
             break;
 
+        case 4:
+            printf("\n\t\t Bye Bye :)\n\n");
+            exit(0);
+            break;
+
+        default:
+            printf("Sorry invalid option");
+            break;
+        }
+        printf("\n\nDo you want to perform another operation?[yes/no]:\t");
+        scanf("%s",&contFlag);
+        system("cls");
+    }
+    printf("\n\t\t Bye Bye :)\n\n");
+    printf("\n\n");
+
+    return 0;
+}
