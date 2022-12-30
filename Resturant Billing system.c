@@ -139,3 +139,35 @@ int main()
                 fclose(fp);
             }
             break;
+
+            case 2:
+            printf("Enter the name of the customer:\t");
+
+            fgets(name,50,stdin);
+            name[strlen(name)-1] = 0;
+
+            fp = fopen("RestaurantBill.dat","r");
+            printf("\t*****Invoice of %s*****",name);
+            while(fread(&order,sizeof(struct orders),1,fp))
+            {
+                float tot = 0;
+                if(!strcmp(order.customer,name))
+                {
+                    generateBillHeader(order.customer,order.date);
+                    for(int i=0; i<order.numOfFoods; i++)
+                    {
+                        generateBillBody(order.f[i].food,order.f[i].qty,order.f[i].price);
+                        tot+=order.f[i].qty * order.f[i].price;
+                    }
+                    generateBillFooter(tot);
+                    invoiceFound = 1;
+                }
+
+            }
+            if(!invoiceFound)
+            {
+                printf("Sorry the invoice for %s was not found!",name);
+            }
+            fclose(fp);
+            break;
+
