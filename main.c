@@ -1,6 +1,6 @@
 /** WELCOME TO GROUP B-7's LAB PROJECT **/
 /**  RESTAURANT BILLING SYSTEM **/
-
+//GG//
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
