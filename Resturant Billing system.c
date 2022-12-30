@@ -69,7 +69,7 @@ int main()
 {
 
 
-      system("COLOR 70");
+    system("COLOR 70");
     int opt,n;
     struct orders ord;
     struct orders order;
@@ -78,8 +78,28 @@ int main()
     FILE *fp;
 
 
-    system("COLOR 70");
+    while(contFlag == 'y')
+    {
+
+        float total = 0;
+        int invoiceFound = 0;
 
 
-    return 0;
-}
+        printf("\t** BHAI BHAI RESTAURANT **");
+        printf("\n\nWhich operation do you want to perform?");
+        printf("\n\n1.Generate an Invoice");
+        printf("\n2.Search an Invoice");
+        printf("\n3.Show all Invoices");
+        printf("\n4.Exit");
+
+
+
+        printf("\n\nYour choice is:\t");
+        scanf("%d",&opt);
+        fgetc(stdin);
+        switch(opt)
+
+
+
+            return 0;
+    }
