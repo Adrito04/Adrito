@@ -37,7 +37,25 @@ void generateBillHeader(char name[50],char date[30])
     printf("\n\n");
 }
 
+void generateBillFooter(float total)
+{
+    printf("\n");
+    float dis = 0.1*total;
+    float netTotal=total-dis;
+    float VAT=0.09*netTotal,pay=netTotal + 2*VAT;//netTotal + VAT + ST
+    printf(".......................................\n");
+    printf("Sub Total\t\t\t%.2f",total);
+    printf("\nDiscount @10%s\t\t\t%.2f","%",dis);
+    printf("\n\t\t\t\t-------");
+    printf("\nNet Total\t\t\t%.2f",netTotal);
+    printf("\nVAT @9%s\t\t\t\t%.2f","%",VAT);
+    printf("\nST @9%s\t\t\t\t%.2f","%",VAT);
+    printf("\n---------------------------------------");
+    printf("\nPay\t\t\t\t%.2f Tk.",pay);
+    printf("\n---------------------------------------\n");
 }
+
+
 int main()
 {
 
